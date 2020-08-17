@@ -1,21 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
-//structure for every process
+
 struct Process {
     int ccode;     // course code
    int duration;      // class duration
    int priority;  //priority
    int arrival_time;   //prefered arrival time
-   
-   
- 
-   int art; // Arrival Time
 };
 void findTurnAroundTime(Process proc[], int n, int wt[], int tat[]) {
    for (int i = 0; i < n; i++)
    tat[i] = proc[i].duration + wt[i];
 }
-//waiting time of all process
 void findWaitingTime(Process proc[], int n, int wt[]) {
    int rt[n];
    for (int i = 0; i < n; i++)
@@ -35,13 +30,11 @@ void findWaitingTime(Process proc[], int n, int wt[]) {
          t++;
          continue;
       }
-      // decrementing the remaining time
+    
       rt[shortest]--;
       minm = rt[shortest];
       if (minm == 0)
          minm = INT_MAX;
-         // If a process gets completely
-         // executed
          if (rt[shortest] == 0) {
             complete++;
             check = false;
