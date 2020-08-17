@@ -1,5 +1,3 @@
-/* Simple C++ program for implementation 
-of FCFS scheduling */
 
 #include<iostream>
 
@@ -15,17 +13,16 @@ struct process
 // function to find the waiting time for all processes
 void findWaitingTime(process proc[], int n, int wt[])
 {
-    // waiting time for first process will be 0
+   
     wt[0] = 0;
- 
-    // calculating waiting time
+
     for (int i = 1; i < n ; i++)
     {
         wt[i] =  proc[i-1].duration + wt[i-1];
     }
 }
  
-// function to calculate turn around time
+
 void findTurnAroundTime( process proc[], int n, int wt[], int tat[])
 {
     // calculating turnaround time by adding
@@ -36,21 +33,18 @@ void findTurnAroundTime( process proc[], int n, int wt[], int tat[])
     }
 }
  
-// function to calculate average time
+
 void findAverageTime( process proc[], int n)
 {
     int wt[n], tat[n], total_wt = 0, total_tat = 0;
  
-    // function to find waiting time of all processes
+    
     findWaitingTime(proc,n,wt);
  
-    // function to find turn around time for all processes
     findTurnAroundTime(proc,n,wt,tat);
  
-    // display processes along with all details
     cout << "Processes  "<< " Burst time  "<< " Waiting time  " << " Turn around time\n";
  
-    // calculate total waiting time and total turn around time
     for (int i = 0; i < n; i++)
     {
         total_wt = total_wt + wt[i];
