@@ -20,6 +20,30 @@ A process or algorithm is used to considered to choose by its outcome or perform
 
 ## Analysis
 
+### Comparison analysis:
+### FCFS
+Perception: Non-Pre-emptive
+
+Complexity: Simplest
+
+Allocation: It allocates the CPU in the order in which the process arrives. The average waiting time is large.
+
+### SJF
+Perception: Pre-emptive and Non-Pre-emptive
+
+Complexity: Difficult to Understand
+
+Allocation: The CPU is allocated to the process with least CPU burst time. The Average waiting time is small compared to FCFS.
+
+### Priority
+Perception: Pre-emptive and Non-Pre-emptive
+
+Complexity: Complex for recognize.
+
+Allocation: It is based on priority and the higher priority job can run fast.The average waiting time is small as compared to FCFS scheduling algorithm.
+
+
+
 #### FCFS:
 
 First Come First Served (FCFS) is the simplest and non preemptive scheduling algorithm. In First Come First Served, the process is allocated to the CPU in the order of their arrival. A queue data structure is used to implement the FCFS scheduling algorithm. The process which is at the head of the ready queue is allocated to the CPU, when CPU is free. Then the process which is running is removed from the queue. When a new process enters into the ready queue, it is placed onto the tail of the ready queue. In comparison, FCFS works best when compared to SJF and priority scheduling because the processes are short which means that no process will wait for a longer time. FCFS algorithm doesn't include any complex logic, it just puts the process requests in a queue and executes it one by one. Hence, FCFS is pretty simple and easy to implement. Eventually, every process will get a chance to run, so starvation doesn't occur. On the other hand, in SJF, the time taken by a process must be known by the CPU beforehand, which is not possible. Longer processes will have more waiting time, eventually they'll suffer starvation. On the contrary, in priority scheduling, a second scheduling algorithm is required to schedule the processes which have same priority. In preemptive priority scheduling, a higher priority process can execute ahead of an already executing lower priority process. If lower priority process keeps waiting for higher priority processes, starvation occurs.
